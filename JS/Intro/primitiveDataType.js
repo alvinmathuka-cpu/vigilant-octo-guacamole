@@ -61,7 +61,3 @@ console.log(undefinedVal1)
 let undefinedVal2;
 console.log(undefinedVal2)
 
-/**Arrays
- */
-let array1=[23,434,54,"gibberish"]
-console.log(array1)
