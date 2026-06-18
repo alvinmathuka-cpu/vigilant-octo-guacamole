@@ -11,4 +11,4 @@ console.log("User details is ",typeof userDetails)
 let userDetails2=`${firstName} ${secondName} is ${age} years old and he stays at ${address}`;
 console.log(userDetails2)
 console.log(`${firstName} ${secondName} is ${age} years old and he stays at ${address}`)
-console.log(`${20+25}`)
+console.log(`${20+25}`)//calculations
