@@ -29,3 +29,36 @@ console.log(`val1=${val1}!==val2=${val2}
 let Inequality=val1!=val2
 console.log(`val1=${val1}!=val2=${val2}
      Ans ${Inequality} its type is ${typeof Inequality}`)
+
+/**
+ * Greater than >
+ * Less than <
+ * Greater than or equal to >=
+ * Less than or equal to <=
+ */
+
+let numb3=20
+let numb4=10
+
+let str1="A"
+let str2="b"
+
+console.log(`${str1}=${str1.charCodeAt(0)}`)
+console.log(`${str2}=${str2.charCodeAt(0)}`)
+
+console.log(`str2>str1=${str2}>${str1} ${str2>str1}`)
+
+// console.log(`numb1=${numb1} and numb2=${numb2}`)
+// console.log(`str1=${str1} and str2=${str2}`)
+
+// console.log(`numb3>numb4 ${numb3>numb4}`)
+// console.log(`str2>str1 ${str2>str1}`)
+
+// console.log(`numb3>=numb4 ${numb3>=numb4}`)
+// console.log(`str2>=str1 ${str2>=str1}`)
+
+// console.log(`numb3<numb4 ${numb3<numb4}`)
+// console.log(`str2<str1 ${str2<str1}`)
+
+// console.log(`numb3<=numb4 ${numb3<=numb4}`)
+// console.log(`str2<=str1 ${str2<=str1}`)
