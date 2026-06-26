@@ -6,7 +6,9 @@
  * type convert to Number
  * +<>
  */
-//stay here until he has entered a correct number
+
+//stay on input until a correct number is entered
+
 let grossMonthlySalary = null;
 const personalRelief = 2400;
 while (true) {
@@ -23,9 +25,12 @@ while (true) {
 console.log(`Your gross is ${grossMonthlySalary} its type is ${typeof grossMonthlySalary}`);
 
 //NSSF
+
 let NSSF = null;
 let RawNSSF = null;
 let NSSFTier = null;
+
+//Tiered NSSF Calculation
 
 if (grossMonthlySalary<= 9000) {
     RawNSSF = grossMonthlySalary*0.06;
@@ -41,14 +46,26 @@ if (grossMonthlySalary<= 9000) {
 NSSF = RawNSSF;
 console.log(`NSSF = ${NSSF} and Tier = ${NSSFTier}`)
 
+//Shif
+
+let shif = null;
+shif = grossMonthlySalary*(2.75/100);
+
+//Housing Levy
+
+let housingLevy = null;
+housingLevy = grossMonthlySalary*(1.5/100);
+
 //Taxable Income
 
-let taxableIncome = grossMonthlySalary-NSSF;
+let taxableIncome = grossMonthlySalary-shif-housingLevy;
 
 //Paye
 
 let paye = null;
 let tier = null;
+
+//Tiered Paye Calculation
 
 if (taxableIncome >= 0 && taxableIncome <= 24000){
     paye = taxableIncome*0.1;
@@ -76,6 +93,28 @@ if (taxableIncome >= 0 && taxableIncome <= 24000){
     +(taxableIncome - 800000)*0.35;
     tier = `>=800000`;
 }
-console.log(`Taxable Income = ${taxableIncome}`)
-console.log(`paye = ${paye} Paye tier = ${tier}`)
 
+//PAYE Payable
+
+let finalPaye = paye - personalRelief;
+
+//Total Deductions
+
+let totalDeductions = null;
+totalDeductions = finalPaye+shif+housingLevy;
+
+//Net Pay
+
+let netPay = null;
+netPay = grossMonthlySalary-totalDeductions;
+
+alert(`
+    GrossMonthlySalary = ${grossMonthlySalary}
+    NSSF = ${NSSF}
+    GrossPaye = ${paye}
+    PayePayable = ${finalPaye}
+    SHIF = ${shif}
+    Housing Levy = ${housingLevy}
+    Total Deductions = ${totalDeductions}
+    Net Pay = ${netPay}
+    `)
