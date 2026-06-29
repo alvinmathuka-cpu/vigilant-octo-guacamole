@@ -14,7 +14,7 @@ const personalRelief = 2400;
 while (true) {
     let gross = prompt("Enter your Gross Salary");
     if (!isNaN(gross)) {
-        gross= Number(gross);
+        gross = Number(gross);
         if (gross > 0) {
             grossMonthlySalary=gross;
             break;
@@ -24,11 +24,17 @@ while (true) {
 }
 console.log(`Your gross is ${grossMonthlySalary} its type is ${typeof grossMonthlySalary}`);
 
-//NSSF
+//All Other Vars
 
 let NSSF = null;
 let RawNSSF = null;
 let NSSFTier = null;
+let totalDeductions = null;
+let paye = null;
+let tier = null;
+let shif = null;
+let housingLevy = null;
+let netPay = null;
 
 //Tiered NSSF Calculation
 
@@ -48,22 +54,15 @@ console.log(`NSSF = ${NSSF} and Tier = ${NSSFTier}`)
 
 //Shif
 
-let shif = null;
 shif = grossMonthlySalary*(2.75/100);
 
 //Housing Levy
 
-let housingLevy = null;
 housingLevy = grossMonthlySalary*(1.5/100);
 
 //Taxable Income
 
 let taxableIncome = grossMonthlySalary-shif-housingLevy;
-
-//Paye
-
-let paye = null;
-let tier = null;
 
 //Tiered Paye Calculation
 
@@ -100,12 +99,10 @@ let finalPaye = paye - personalRelief;
 
 //Total Deductions
 
-let totalDeductions = null;
 totalDeductions = finalPaye+shif+housingLevy;
 
 //Net Pay
 
-let netPay = null;
 netPay = grossMonthlySalary-totalDeductions;
 
 alert(`
